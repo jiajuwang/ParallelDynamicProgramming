@@ -36,16 +36,4 @@ public class knapsack_sequential {
         return DP[N][maxWeight];
     }
 
-    public static void main(String[] args) {
-
-        int capacity = 5;
-        int[] V = {3, 4, 5, 6};
-        int[] W = {2, 3, 4, 5};
-        System.out.println(knapsack_sequential(W, V, capacity));
-
-        capacity = 7;
-        V = new int[] {2, 2, 4, 5, 3};
-        W = new int[] {3, 1, 3, 4, 2};
-        System.out.println(knapsack_sequential(W, V, capacity));
-    }
 }
