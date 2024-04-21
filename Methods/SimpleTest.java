@@ -44,6 +44,58 @@ public class SimpleTest {
         System.out.println(result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
+
+    @Test
+    public void testKnapsack_p1() {
+        int[] weights = {3, 1, 3, 4, 2};
+        int[] values = {2, 2, 4, 5, 3};
+        int maxWeight = 7;
+        double expected = 10.0;
+        knapsack_parallel knapsack = new knapsack_parallel(weights, values, maxWeight);
+        knapsack.solve();
+        double result = knapsack.getSolution();
+        System.out.println("Maximum value achievable: " + result);
+        assertEquals(expected, result, 0.0001);
+
+    }
+
+    @Test
+    public void testKnapsack_p2() {
+        int[] weights = {2, 3, 4, 5};
+        int[] values = {3, 4, 5, 6};
+        int maxWeight = 5;
+        double expected = 7.0;
+        knapsack_parallel knapsack = new knapsack_parallel(weights, values, maxWeight);
+        knapsack.solve();
+        double result = knapsack.getSolution();
+        System.out.println("Maximum value achievable: " + result);
+        assertEquals(expected, result, 0.0001);
+
+    }
+
+    @Test
+    public void testKnapsack_s1() {
+        int[] weights = {3, 1, 3, 4, 2};
+        int[] values = {2, 2, 4, 5, 3};
+        int maxWeight = 7;
+        int expected = 10;
+        int result = knapsack_sequential.knapsack_sequential(weights, values, maxWeight);
+        System.out.println("Maximum value achievable: " + result);
+        assertEquals(expected, result);
+
+    }
+
+    @Test
+    public void testKnapsack_s2() {
+        int[] weights = {2, 3, 4, 5};
+        int[] values = {3, 4, 5, 6};
+        int maxWeight = 5;
+        int expected = 7;
+        int result = knapsack_sequential.knapsack_sequential(weights, values, maxWeight);
+        System.out.println("Maximum value achievable: " + result);
+        assertEquals(expected, result);
+
+    }
 	
 	
 }
