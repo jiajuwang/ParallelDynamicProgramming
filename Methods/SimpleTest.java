@@ -61,10 +61,10 @@ public class SimpleTest {
 
     @Test
     public void testKnapsack_p2() {
-        int[] weights = {2, 3, 4, 5};
-        int[] values = {3, 4, 5, 6};
-        int maxWeight = 5;
-        double expected = 7.0;
+        int[] weights = {1, 2, 5, 6};
+        int[] values = {1, 6, 18, 22};
+        int maxWeight = 10;
+        double expected = 29.0;
         knapsack_parallel knapsack = new knapsack_parallel(weights, values, maxWeight);
         knapsack.solve();
         double result = knapsack.getSolution();
@@ -87,10 +87,10 @@ public class SimpleTest {
 
     @Test
     public void testKnapsack_s2() {
-        int[] weights = {2, 3, 4, 5};
-        int[] values = {3, 4, 5, 6};
-        int maxWeight = 5;
-        int expected = 7;
+        int[] weights = {1, 2, 5, 6};
+        int[] values = {1, 6, 18, 22};
+        int maxWeight = 10;
+        int expected = 29;
         int result = knapsack_sequential.knapsack_sequential(weights, values, maxWeight);
         System.out.println("Maximum value achievable: " + result);
         assertEquals(expected, result);
