@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 public class SimpleTest {
 	@Test
-    public void testBST_p() {
-        double frequency[] = {0.2, 0.2, 0.2, 0.2, 0.2};
-        double expected = 2.2;
+    public void testBST_p1() {
+        double frequency[] = {0.1,0.7,0.2};
+        double expected = 1.3;
         optimal_BST_Parallel optimalBST = new optimal_BST_Parallel(frequency);
         optimalBST.solve();
         double result = optimalBST.getSolution();
@@ -15,36 +15,75 @@ public class SimpleTest {
     }
 	
 	@Test
-    public void testBST_s() {
-        double frequency[] = {0.2, 0.2, 0.2, 0.2, 0.2};
-        double expected = 2.2;
+    public void testBST_s1() {
+        double frequency[] = {0.1,0.7,0.2};
+        double expected = 1.3;
         optimal_BST_sequantial optimalBST = new optimal_BST_sequantial(frequency);
         double result = optimalBST.solve();
         System.out.println(result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
+	@Test
+    public void testBST_p2() {
+        double frequency[] = {0.12, 0.05, 0.18, 0.08, 0.1, 0.07, 0.15, 0.09, 0.11, 0.05};
+        double expected = 2.61;
+        optimal_BST_Parallel optimalBST = new optimal_BST_Parallel(frequency);
+        optimalBST.solve();
+        double result = optimalBST.getSolution();
+        System.out.println("BST2p "+result);
+        assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
+    }
+	
+	@Test
+    public void testBST_s2() {
+        double frequency[] = {0.12, 0.05, 0.18, 0.08, 0.1, 0.07, 0.15, 0.09, 0.11, 0.05};
+        double expected = 2.61;
+        optimal_BST_sequantial optimalBST = new optimal_BST_sequantial(frequency);
+        double result = optimalBST.solve();
+        System.out.println("BST2s "+result);
+        assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
+    }
+	
 	@Test 
-	public void testMatrix_p() {
+	public void testMatrix_p1() {
         double dimensions[] = {30.0,10.0,30.0,2.0};
         double expected = 1200.0;
         matrix_multiplication_parallel mp = new matrix_multiplication_parallel(dimensions);
         mp.solve();
         double result = mp.getSolution();
-        System.out.println(result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
 	@Test
-    public void testMatrix_s() {
+    public void testMatrix_s1() {
         double dimensions[] = {30.0,10.0,30.0,2.0};
         double expected = 1200.0;
         matrix_multiplication_sequential ms = new matrix_multiplication_sequential(dimensions);
         double result = ms.solve();
-        System.out.println(result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 
+	@Test 
+	public void testMatrix_p2() {
+        double dimensions[] = {30.0,10.0,30.0,2.0,7.0,9.0,12.0,34.0};
+        double expected = 4398.0;
+        matrix_multiplication_parallel mp = new matrix_multiplication_parallel(dimensions);
+        mp.solve();
+        double result = mp.getSolution();
+        System.out.println("Matrix2p "+ result);
+        assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
+    }
+	
+	@Test
+    public void testMatrix_s2() {
+        double dimensions[] = {30.0,10.0,30.0,2.0,7.0,9.0,12.0,34.0};
+        double expected = 4398.0;
+        matrix_multiplication_sequential ms = new matrix_multiplication_sequential(dimensions);
+        double result = ms.solve();
+        System.out.println("Matrix2s "+result);
+        assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
+    }
     @Test
     public void testKnapsack_p1() {
         int[] weights = {3, 1, 3, 4, 2};
