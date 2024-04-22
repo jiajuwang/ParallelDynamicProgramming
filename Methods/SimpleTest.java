@@ -10,7 +10,7 @@ public class SimpleTest {
         optimal_BST_Parallel optimalBST = new optimal_BST_Parallel(frequency);
         optimalBST.solve();
         double result = optimalBST.getSolution();
-        System.out.println(result);
+        System.out.println("optimal cost for BST "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -20,7 +20,7 @@ public class SimpleTest {
         double expected = 1.3;
         optimal_BST_sequantial optimalBST = new optimal_BST_sequantial(frequency);
         double result = optimalBST.solve();
-        System.out.println(result);
+        System.out.println("optimal cost for BST "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -31,7 +31,7 @@ public class SimpleTest {
         optimal_BST_Parallel optimalBST = new optimal_BST_Parallel(frequency);
         optimalBST.solve();
         double result = optimalBST.getSolution();
-        System.out.println("BST2p "+result);
+        System.out.println("optimal cost for BST "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -41,7 +41,7 @@ public class SimpleTest {
         double expected = 2.61;
         optimal_BST_sequantial optimalBST = new optimal_BST_sequantial(frequency);
         double result = optimalBST.solve();
-        System.out.println("BST2s "+result);
+        System.out.println("optimal cost for BST "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -52,6 +52,7 @@ public class SimpleTest {
         matrix_multiplication_parallel mp = new matrix_multiplication_parallel(dimensions);
         mp.solve();
         double result = mp.getSolution();
+        System.out.println("optimal cost for Matrix Multiplication "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -61,6 +62,7 @@ public class SimpleTest {
         double expected = 1200.0;
         matrix_multiplication_sequential ms = new matrix_multiplication_sequential(dimensions);
         double result = ms.solve();
+        System.out.println("optimal cost for Matrix Multiplication "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 
@@ -71,7 +73,7 @@ public class SimpleTest {
         matrix_multiplication_parallel mp = new matrix_multiplication_parallel(dimensions);
         mp.solve();
         double result = mp.getSolution();
-        System.out.println("Matrix2p "+ result);
+        System.out.println("optimal cost for Matrix Multiplication "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
 	
@@ -81,7 +83,7 @@ public class SimpleTest {
         double expected = 4398.0;
         matrix_multiplication_sequential ms = new matrix_multiplication_sequential(dimensions);
         double result = ms.solve();
-        System.out.println("Matrix2s "+result);
+        System.out.println("optimal cost for Matrix Multiplication "+result);
         assertEquals(expected, result, 0.0001); // Use delta for comparing floating-point numbers
     }
     @Test
@@ -132,6 +134,30 @@ public class SimpleTest {
         int expected = 29;
         int result = knapsack_sequential.knapsack_sequential(weights, values, maxWeight);
         System.out.println("Maximum value achievable: " + result);
+        assertEquals(expected, result);
+
+    }
+    
+    @Test
+    public void testIncseq_p1() {
+        int[] sequence = {35, 38, 27, 45, 32};
+        int expected = 3;
+        sequence_parallel sq = new sequence_parallel(sequence);
+        sq.solve();
+        int result = sq.getSolution();
+        System.out.println("Maximum length of  " + result);
+        assertEquals(expected, result);
+
+    }
+    
+    @Test
+    public void testIncseq_p2() {
+        int[] sequence = {1, 3, 4, 5,7};
+        int expected = 5;
+        sequence_parallel sq = new sequence_parallel(sequence);
+        sq.solve();
+        int result = sq.getSolution();
+        System.out.println("Maximum length of  increasing sequence: " + result);
         assertEquals(expected, result);
 
     }
