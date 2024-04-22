@@ -1,6 +1,6 @@
 package main;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
 
 class MyThread implements Callable<Boolean> {
     private int id;
