@@ -162,5 +162,26 @@ public class SimpleTest {
 
     }
 	
+    @Test
+    public void testIncseq_s1() {
+        int[] sequence = {35, 38, 27, 45, 32};
+        int expected = 3;
+        sequence_sequential sq = new sequence_sequential();
+        int result = sq.sequence_sequential(sequence);
+        System.out.println("Maximum length of  increasing sequence: " + result);
+        assertEquals(expected, result);
+
+    }
+    
+    @Test
+    public void testIncseq_s2() {
+        int[] sequence = {1, 3, 4, 5,7};
+        int expected = 5;
+        sequence_sequential sq = new sequence_sequential();
+        int result = sq.sequence_sequential(sequence);
+        System.out.println("Maximum length of  increasing sequence: " + result);
+        assertEquals(expected, result);
+
+    }
 	
 }
