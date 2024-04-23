@@ -27,6 +27,7 @@ public class optimal_BST_Parallel extends LLP_new{
 	@Override
 	public boolean forbidden(int i, int j) {
 		//compute s(i,j)
+		System.out.println("current grid i: "+i+" j "+j+" priority: "+priority.get());
 		double sum = 0.0;
 		for(int index =i;index<=j;index++) {
 			sum += frequency[index];
@@ -48,6 +49,7 @@ public class optimal_BST_Parallel extends LLP_new{
 	@Override
 	public void advance(int i, int j) {
 		// TODO Auto-generated method stub
+		
 		G[i][j] = min[i][j];
 	}
 	

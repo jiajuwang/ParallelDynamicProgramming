@@ -145,7 +145,7 @@ public class SimpleTest {
         sequence_parallel sq = new sequence_parallel(sequence);
         sq.solve();
         int result = sq.getSolution();
-        System.out.println("Maximum length of  " + result);
+        System.out.println("Maximum length of  increasing sequence: " + result);
         assertEquals(expected, result);
 
     }

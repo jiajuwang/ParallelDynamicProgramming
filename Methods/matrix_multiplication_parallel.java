@@ -17,6 +17,7 @@ public class matrix_multiplication_parallel extends LLP_new {
 	}
 	@Override
 	public boolean forbidden(int i, int j) {
+		System.out.println("current grid i: "+i+" j "+j+" priority: "+priority.get());
 		for(int k=i;k<j;k++) {
 			min[i][j] = Math.min(min[i][j], G[i][k]+G[k+1][j]+dimensions[i]*dimensions[k+1]*dimensions[j+1]);
 		}

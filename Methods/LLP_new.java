@@ -59,7 +59,6 @@ public abstract class LLP_new {
     			//System.out.println("start "+index);
     		}
     	}
-
     	/*
     	 * */
     	for(int index=0;index<num_threads-priority.get();index++) {
