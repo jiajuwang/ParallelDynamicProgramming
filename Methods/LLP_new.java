@@ -48,17 +48,14 @@ public abstract class LLP_new {
     
     public boolean no_forbidden() {
     	boolean predicate = true;
-    	for(int index=0;index<num_threads*num_threads;index++) {
-			int i = index/num_threads;
-			int j = index%num_threads;
-    		if((j-i)!=priority.get()) {
-				continue;
-			}
-    		else {
-    			futures[index] = executor.submit(threads[index]);
-    			//System.out.println("start "+index);
-    		}
-    	}
+    	for(int index=0;index<num_threads-priority.get();index++) {
+    		
+    			int i = index;
+    			int j = index+priority.get();
+    			int cur = i*num_threads+j;
+        		futures[cur] = executor.submit(threads[cur]);
+    
+    }
     	/*
     	 * */
     	for(int index=0;index<num_threads-priority.get();index++) {
